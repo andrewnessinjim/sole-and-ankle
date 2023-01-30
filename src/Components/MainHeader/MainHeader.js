@@ -8,7 +8,7 @@ export default function MainHeader() {
                 <LogoContainer>
                     <h1>Sole&Ankle</h1>
                 </LogoContainer>
-                <nav>
+                <Nav>
                     <NavList>
                         <NavItem><NavLink href="/">Sale</NavLink></NavItem>
                         <NavItem><NavLink href="/">New Releases</NavLink></NavItem>
@@ -17,7 +17,7 @@ export default function MainHeader() {
                         <NavItem><NavLink href="/">Kids</NavLink></NavItem>
                         <NavItem><NavLink href="/">Collections</NavLink></NavItem>
                     </NavList>
-                </nav>
+                </Nav>
             </Wrapper>
         </BGExtension>)
 }
@@ -32,26 +32,40 @@ const Wrapper = styled.div`
     max-width: ${SIZES.siteContentWidth};
     margin-left: auto;
     margin-right: auto;
+    height: ${72/16}rem;
+    display: flex;
     position: relative;
 `;
 
 const LogoContainer = styled.div`
+    color: ${COLORS.gray[900]};
+    display: flex;
+    align-items: center;
     position: absolute;
     height: 100%;
+
+    @media screen and (max-width: 1180px){
+        position: static;
+        height: initial;
+    }
+`;
+
+const Nav = styled.nav`
     display: flex;
-    flex-direction:column;
-    justify-content: center;
-    color: ${COLORS.gray[900]};
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: 1180px){
+        margin-left: 48px;
+    }
 `;
 
 const NavList = styled.ul`
     display: flex;
     list-style: none;
     padding: 0;
-    gap: 48px;
-    justify-content: center;
-    align-items: center;
-    height: ${72/16}rem;
+    gap: 48px;    
 `;
 
 const NavItem = styled.li`
