@@ -5,9 +5,11 @@ export default function MainHeader() {
     return (
         <BGExtension>
             <Wrapper>
-                <LogoContainer>
-                    <h1>Sole&Ankle</h1>
-                </LogoContainer>
+                <Side>
+                    <LogoContainer>
+                        <h1>Sole&Ankle</h1>
+                    </LogoContainer>
+                </Side>
                 <Nav>
                     <NavList>
                         <NavItem><NavLink href="/">Sale</NavLink></NavItem>
@@ -18,6 +20,7 @@ export default function MainHeader() {
                         <NavItem><NavLink href="/">Collections</NavLink></NavItem>
                     </NavList>
                 </Nav>
+                <Side/>
             </Wrapper>
         </BGExtension>)
 }
@@ -27,45 +30,32 @@ const BGExtension = styled.div`
 `
 
 const Wrapper = styled.div`
-    padding-left: 32px;
-    padding-right: 32px;
     max-width: ${SIZES.siteContentWidth};
     margin-left: auto;
     margin-right: auto;
     height: ${72/16}rem;
     display: flex;
-    position: relative;
+    align-items: baseline;
+    padding: 12px 32px;
 `;
 
+const Side = styled.div`
+    flex: 1;
+`;
 const LogoContainer = styled.div`
     color: ${COLORS.gray[900]};
-    display: flex;
-    align-items: center;
-    position: absolute;
-    height: 100%;
-
-    @media screen and (max-width: 1180px){
-        position: static;
-        height: initial;
-    }
+    margin-right: 48px;
 `;
 
 const Nav = styled.nav`
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-
-    @media screen and (max-width: 1180px){
-        margin-left: 48px;
-    }
+    
 `;
 
 const NavList = styled.ul`
     display: flex;
     list-style: none;
     padding: 0;
-    gap: 48px;    
+    gap: 48px;
 `;
 
 const NavItem = styled.li`
