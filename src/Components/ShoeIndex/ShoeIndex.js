@@ -1,28 +1,70 @@
-import styled from "styled-components"
-import { SIZES } from "../../constants";
+import styled from "styled-components/macro"
+import { COLORS, SIZES } from "../../constants";
 import Breadcrumbs from "../Breadcrumbs";
+import ShoeCategories from "../ShoeCategories";
+import Spacer from "../Spacer";
+import Select from "../Select";
+
+/*Not taking effect for some strange reason! */
+const SortSelect = styled(Select)`
+    border: 5px solid red;
+`;
 
 export default function ShoeIndex(){
     return(
         <Wrapper>
+            <MainColumn>
+                <Header>
+                    <Title>Running</Title>
+                    <SortSelect
+                        label="Sort"
+                        value="newest">
+                        <option value="newest">Newest Releases</option>
+                        <option value="price">Price</option>
+                    </SortSelect>
+                </Header>
+            </MainColumn>
             <LeftColumn>
                 <Breadcrumbs>
                     <Breadcrumbs.Crumb href="/">Andrew</Breadcrumbs.Crumb>
                     <Breadcrumbs.Crumb href="/">Nessin</Breadcrumbs.Crumb>
                     <Breadcrumbs.Crumb href="/">Jim</Breadcrumbs.Crumb>
                 </Breadcrumbs>
+                <Spacer size={36}/>
+                <ShoeCategories />
             </LeftColumn>
         </Wrapper>
     )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
     max-width: ${SIZES.siteContentWidth};
     margin-left: auto;
     margin-right: auto;
     padding-left: 32px;
     padding-right: 32px;
+    display: flex;
 `;
 
 const LeftColumn = styled.div`
+    order: 1;
 `;
+
+const MainColumn = styled.div`
+    order: 2;
+    margin-left: 32px;
+    flex-grow: 1;
+`;
+
+const Header = styled.header`
+    display: flex;
+`;
+
+const Title = styled.h2`
+    color: ${COLORS.gray[900]};
+    line-height: 1;
+    font-size: ${24/16}rem;
+    font-weight: 600;
+    margin-right: auto;
+`;
+
