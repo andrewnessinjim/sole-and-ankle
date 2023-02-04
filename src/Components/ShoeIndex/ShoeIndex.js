@@ -29,9 +29,9 @@ export default function ShoeIndex(){
             </MainColumn>
             <LeftColumn>
                 <Breadcrumbs>
-                    <Breadcrumbs.Crumb href="/">Andrew</Breadcrumbs.Crumb>
-                    <Breadcrumbs.Crumb href="/">Nessin</Breadcrumbs.Crumb>
-                    <Breadcrumbs.Crumb href="/">Jim</Breadcrumbs.Crumb>
+                    <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
+                    <Breadcrumbs.Crumb href="/">Sale</Breadcrumbs.Crumb>
+                    <Breadcrumbs.Crumb href="/">Shoes</Breadcrumbs.Crumb>
                 </Breadcrumbs>
                 <Spacer size={36}/>
                 <ShoeCategories />
