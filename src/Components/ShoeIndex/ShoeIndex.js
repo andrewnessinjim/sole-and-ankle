@@ -28,11 +28,11 @@ export default function ShoeIndex(){
                 <ShoeGrid />
             </MainColumn>
             <LeftColumn>
-                <ShoeBreadcrumbs>
+                <Breadcrumbs>
                     <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
                     <Breadcrumbs.Crumb href="/">Sale</Breadcrumbs.Crumb>
                     <Breadcrumbs.Crumb href="/">Shoes</Breadcrumbs.Crumb>
-                </ShoeBreadcrumbs>
+                </Breadcrumbs>
                 <Spacer size={36}/>
                 <ShoeCategories />
             </LeftColumn>
@@ -47,17 +47,14 @@ const Wrapper = styled.main`
     padding-left: 32px;
     padding-right: 32px;
     display: flex;
+    gap: 32px;
+    align-items: baseline;
 `;
 
 const LeftColumn = styled.div`
     order: 1;
     flex-basis: 248px;
     flex-shrink: 0;
-`;
-
-const ShoeBreadcrumbs = styled(Breadcrumbs)`
-    height: 42px;
-    align-self: flex-end;
 `;
 
 const MainColumn = styled.div`
@@ -67,8 +64,7 @@ const MainColumn = styled.div`
 
 const Header = styled.header`
     display: flex;
-    height: 42px;
-    align-items: center;
+    align-items: baseline;
 `;
 
 const Title = styled.h2`
