@@ -6,7 +6,9 @@ export default function ShoeCard({shoeData}){
     const {imageSrc, name, numOfColors, price} = shoeData;
     return (
         <Wrapper>
-            <img src={imageSrc} alt={name}/>
+            <ImageWrapper>
+                <Img src={imageSrc} alt={name}/>
+            </ImageWrapper>
             <Spacer size={12} />
             <Row>
                 <Name>{name}</Name>
@@ -23,6 +25,13 @@ export default function ShoeCard({shoeData}){
 const Wrapper = styled.article`
     flex: 1;
     flex-basis: 260px;
+`;
+
+const ImageWrapper = styled.div`
+`;
+
+const Img = styled.img`
+    width: 100%;
 `;
 
 const Row = styled.div`
