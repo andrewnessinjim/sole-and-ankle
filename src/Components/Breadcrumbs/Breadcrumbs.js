@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants";
 
-export default function Breadcrumbs({children}) {
+export default function Breadcrumbs({children, className}) {
     return (
-        <Wrapper>
+        <Wrapper className={className}>
             {children}
         </Wrapper>
     )
@@ -22,6 +22,9 @@ const Wrapper = styled.nav`
 `;
 
 const CrumbWrapper = styled.div`
+    display: flex;
+    align-items: center;
+
     &:not(:first-of-type)::before {
         content: "/";
         padding-left: 8px;

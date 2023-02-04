@@ -18,5 +18,5 @@ export const WEIGHTS = {
 };
 
 export const SIZES = {
-  siteContentWidth: "1440px"
+  siteContentWidth: "1568px"
 }
