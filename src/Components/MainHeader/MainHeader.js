@@ -13,7 +13,7 @@ export default function MainHeader() {
                 <Nav>
                     <NavList>
                         <NavItem><NavLink href="/">Sale</NavLink></NavItem>
-                        <NavItem><NavLink href="/">New Releases</NavLink></NavItem>
+                        <NavItem><NavLink href="/">New&nbsp;Releases</NavLink></NavItem>
                         <NavItem><NavLink href="/">Men</NavLink></NavItem>
                         <NavItem><NavLink href="/">Women</NavLink></NavItem>
                         <NavItem><NavLink href="/">Kids</NavLink></NavItem>
