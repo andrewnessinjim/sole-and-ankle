@@ -4,6 +4,7 @@ import Breadcrumbs from "../Breadcrumbs";
 import ShoeCategories from "../ShoeCategories";
 import Spacer from "../Spacer";
 import Select from "../Select";
+import ShoeGrid from "../ShoeGrid";
 
 /*Not taking effect for some strange reason! */
 const SortSelect = styled(Select)`
@@ -23,6 +24,8 @@ export default function ShoeIndex(){
                         <option value="price">Price</option>
                     </SortSelect>
                 </Header>
+                <Spacer size={34} />
+                <ShoeGrid />
             </MainColumn>
             <LeftColumn>
                 <Breadcrumbs>
