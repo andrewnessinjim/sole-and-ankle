@@ -71,7 +71,7 @@ const Price = styled.span`
     font-weight: 500;
     font-size: 1rem;
     line-height: ${19/16};
-    color: ${COLORS.gray[900]};
+    color: ${p => p.isOnSale ? COLORS.gray[700] :COLORS.gray[900]};
     text-decoration: ${p => p.isOnSale && 'line-through'};
 `;
 
