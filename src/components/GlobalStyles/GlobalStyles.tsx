@@ -12,6 +12,10 @@ const GlobalStyles = createGlobalStyle`
     --gray-500: #949A9C;
     --gray-300: #C9CECF;
     --gray-100: #F2F3F3;
+
+    --weight-normal: 500;
+    --weight-medium: 600;
+    --weight-bold: 800;
   }
 
   body {
