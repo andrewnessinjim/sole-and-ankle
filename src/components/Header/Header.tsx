@@ -11,9 +11,9 @@ function Header() {
     <Wrapper>
       <SuperHeader />
       <MainHeader>
-        <LogoWrapper>
+        <Side>
           <Logo />
-        </LogoWrapper>
+        </Side>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -22,6 +22,7 @@ function Header() {
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
+        <Side/>
       </MainHeader>
     </Wrapper>
   );
@@ -31,25 +32,23 @@ const Wrapper = styled.header`
   border-bottom: 1px solid var(--gray-300);
 `;
 
-const LogoWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-`;
+const Side = styled.div`
+  flex: 1;
+`
 
 const MainHeader = styled.div`
   ${MaxWidthWrapper};
-  position: relative;
+  height: 72px;
+  display: flex;
+  align-items: baseline;
+  padding-top: 18px;
+  padding-bottom: 18px;
 `;
 
 const Nav = styled.nav`
   display: flex;
   gap: 48px;
-  align-items: center;
-  justify-content: center;
-  height: 72px;
+  margin: 0 48px;
 `;
 
 const NavLink = styled.a`
