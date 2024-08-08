@@ -7,7 +7,7 @@ import styled from "styled-components";
 const SIZE_VARIANTS = {
   small: {
     cssVars: {
-      "--fontSize": "14px",
+      "--fontSize": "0.875rem",
       "--borderBottom": "1px solid currentColor",
       "--padding": "4px 4px 4px 24px",
       "--icon-position-top": "4px",
@@ -17,7 +17,7 @@ const SIZE_VARIANTS = {
   },
   large: {
     cssVars: {
-      "--fontSize": "18px",
+      "--fontSize": "1.125rem",
       "--borderBottom": "2px solid currentColor",
       "--padding": "8px 8px 8px 36px",
       "--icon-position-top": "6px",

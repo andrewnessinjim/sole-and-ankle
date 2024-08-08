@@ -18,17 +18,12 @@ const ContentWrapper = styled.div`
   height: 40px;
   display: flex;
   align-items: center;
+  gap: 24px;
 `;
 
 const MarketingMessage = styled.p`
   margin: 0;
   margin-right: auto;
-`;
-
-const ActionsBar = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 24px;
 `;
 
 const HelpLink = styled.a`
@@ -42,20 +37,18 @@ function SuperHeader() {
         <MarketingMessage>
           Free shipping on domestic orders over $75!
         </MarketingMessage>
-        <ActionsBar>
-          <IconInput
-            placeholder="Search..."
-            size="small"
-            DisplayIcon={Search}
-            width={175}
-          />
-          <HelpLink>Help</HelpLink>
-          <ShoppingBag
-            strokeWidth={1}
-            size={24}
-            style={{ color: "var(--gray-300)" }}
-          />
-        </ActionsBar>
+        <IconInput
+          placeholder="Search..."
+          size="small"
+          DisplayIcon={Search}
+          width={175}
+        />
+        <HelpLink>Help</HelpLink>
+        <ShoppingBag
+          strokeWidth={1}
+          size={24}
+          style={{ color: "var(--gray-300)" }}
+        />
       </ContentWrapper>
     </Wrapper>
   );
