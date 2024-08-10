@@ -10,6 +10,7 @@ export default {
 
 export const Default = {
   args: {
+    label: "Sort",
     value: "newest",
     children: [
       <option value="newest" key={1}>

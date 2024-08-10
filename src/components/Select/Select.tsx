@@ -14,6 +14,12 @@ type Props = {
 };
 
 const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 24px;
+`;
+
+const SelectWrapper = styled.div`
   font-size: 1rem;
   width: fit-content;
   position: relative;
@@ -26,13 +32,9 @@ const HiddenSelect = styled.select`
   border-radius: 8px;
 `;
 
-const SelectedValue = styled.p`
+const SelectedValue = styled.p``;
 
-`;
-
-const StChevronDown = styled(ChevronDown)`
-
-`;
+const StChevronDown = styled(ChevronDown)``;
 
 const Presentational = styled.div`
   display: flex;
@@ -44,11 +46,14 @@ const Presentational = styled.div`
   color: var(--gray-700);
   position: relative;
   pointer-events: none;
-  
+  font-weight: 600;
+
   ${HiddenSelect}:hover + & {
     color: var(--gray-900);
   }
 `;
+
+const VisibleLabel = styled.span``;
 
 function Select({ label, children, value }: Props) {
   const [currentValue, setCurrentValue] = React.useState(value);
@@ -56,17 +61,20 @@ function Select({ label, children, value }: Props) {
   const displayedValue = getDisplayedValue(currentValue, children);
   return (
     <Wrapper>
-      <HiddenSelect
-        title={label}
-        value={currentValue}
-        onChange={(e) => setCurrentValue(e.target.value)}
-      >
-        {children}
-      </HiddenSelect>
-      <Presentational>
-        <SelectedValue>{displayedValue}</SelectedValue>{" "}
-        <StChevronDown size="24px" strokeWidth="2px" />
-      </Presentational>
+      <VisibleLabel>{label}</VisibleLabel>
+      <SelectWrapper>
+        <HiddenSelect
+          title={label}
+          value={currentValue}
+          onChange={(e) => setCurrentValue(e.target.value)}
+        >
+          {children}
+        </HiddenSelect>
+        <Presentational>
+          <SelectedValue>{displayedValue}</SelectedValue>{" "}
+          <StChevronDown size="24px" strokeWidth="2px" />
+        </Presentational>
+      </SelectWrapper>
     </Wrapper>
   );
 }
