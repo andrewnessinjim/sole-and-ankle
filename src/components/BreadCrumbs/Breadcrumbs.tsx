@@ -11,7 +11,9 @@ const BreadcrumbList = styled.ol`
   color: var(--gray-700);
 `;
 
-type CrumbsArray = React.ReactElement<typeof Breadcrumbs.Crumb>[];
+type CrumbsArray =
+   React.ReactElement<typeof Breadcrumbs.Crumb>
+  | React.ReactElement<typeof Breadcrumbs.Crumb>[];
 interface BreadcrumbsProps {
   children: CrumbsArray;
 }
@@ -45,7 +47,7 @@ const CrumbItem = styled.li`
     margin-right: 8px;
     height: 0.8em;
     transform: rotate(15deg);
-    border-right: 1px solid  var(--gray-500);
+    border-right: 1px solid var(--gray-500);
   }
 `;
 
