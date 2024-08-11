@@ -27,8 +27,8 @@ const SelectWrapper = styled.div`
 
 const HiddenSelect = styled.select`
   position: absolute;
-  inset: 0;
-  outline-offset: 2px;
+  inset: 2px;
+  outline-offset: 5px;
   border-radius: 8px;
 `;
 
