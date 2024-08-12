@@ -17,6 +17,12 @@ export const Default = {
   },
 };
 
+export const OnSale = {
+  args: {
+    ...SHOES[5]
+  },
+};
+
 const TestShoeCardContainer = styled.div`
   width: 340px;
 `
