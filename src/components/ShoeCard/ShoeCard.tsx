@@ -54,9 +54,7 @@ function ShoeCard({
 export default ShoeCard;
 
 const Wrapper = styled.article`
-  flex-basis: 280px;
-  flex-shrink: 1;
-  flex-grow: 1;
+  width: 100%;
   position: relative;
 `;
 
