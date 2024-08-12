@@ -9,7 +9,9 @@ import SHOES from "@/data";
 function ShoeCard({ imageSrc, name, numOfColors, price, salePrice } : Props) {
   return (
     <Wrapper>
-      <StImage src={imageSrc} alt={name} width= {340} height={280}/>
+      <ImageWrapper>
+        <StImage src={imageSrc} alt={name} fill/>
+      </ImageWrapper>
       <Spacer size={14}/>
       <ProductInfo>
         <ProductTitle>
@@ -28,9 +30,15 @@ function ShoeCard({ imageSrc, name, numOfColors, price, salePrice } : Props) {
 export default ShoeCard;
 
 const Wrapper = styled.article`
-  flex-basis: 300px;
+  flex-basis: 280px;
   flex-shrink: 1;
   flex-grow: 1;
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 240px;
 `;
 
 const StImage = styled(Image)`
