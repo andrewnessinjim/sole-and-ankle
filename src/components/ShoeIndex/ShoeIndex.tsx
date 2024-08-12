@@ -45,7 +45,8 @@ const Wrapper = styled.div`
 
 const SideColumn = styled.div`
   order: 1;
-  width: 248px;
+  flex-basis: 248px;
+  flex-shrink: 0;
 `;
 
 const MainColumn = styled.div`

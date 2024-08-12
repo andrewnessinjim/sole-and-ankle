@@ -72,6 +72,9 @@ const GlobalStyles = createGlobalStyle`
     border-spacing: 0;
   }
 
+  img {
+    display: block;
+  }
 `;
 
 export default GlobalStyles;

@@ -35,5 +35,6 @@ const ActiveLink = styled(Link)`
   color: var(--primary);
 `;
 
-const Wrapper = styled.aside``;
+const Wrapper = styled.aside`
+`;
 export default ShoeSidebar;
