@@ -28,7 +28,6 @@ function ShoeCard({ imageSrc, name, numOfColors, price, salePrice } : Props) {
 export default ShoeCard;
 
 const Wrapper = styled.article`
-  width: 340px;
   flex-basis: 300px;
   flex-shrink: 1;
   flex-grow: 1;
@@ -53,11 +52,11 @@ const ProductTitle = styled.div`
 const ProductPricing = styled.div`
   color: var(--gray-900);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: var(--weight-normal);
 `;
 
 const Name = styled.h2`
-  font-weight: 600;
+  font-weight: var(--weight-medium);
   font-size: 1rem;
   color: var(--gray-900);
 `;
