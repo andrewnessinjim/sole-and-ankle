@@ -1,11 +1,11 @@
 const BREAKPOINTS = {
-    laptopMax: 81.25,
-    tabletMax: 59.375,
-    phoneMax: 37.5
+    laptopMax: 1300,
+    tabletMax: 950,
+    phoneMax: 600
 }
 
-const MEDIA_QUERIES = {
-    'laptopAndBelow': `(max-width: ${BREAKPOINTS.laptopMax})px`,
-    'tabletAndBelow': `(max-width: ${BREAKPOINTS.tabletMax})px`,
-    'phoneAndBelow': `(max-width: ${BREAKPOINTS.phoneMax})px`
+export const MEDIA_QUERIES = {
+    'laptopAndBelow': `(max-width: ${BREAKPOINTS.laptopMax / 16}rem)`,
+    'tabletAndBelow': `(max-width: ${BREAKPOINTS.tabletMax / 16}rem)`,
+    'phoneAndBelow': `(max-width: ${BREAKPOINTS.phoneMax / 16}rem)`
 }
