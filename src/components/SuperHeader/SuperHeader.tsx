@@ -5,20 +5,27 @@ import styled from "styled-components";
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import { Search, ShoppingBag } from "react-feather";
 import IconInput from "../IconInput";
+import { MEDIA_QUERIES } from "@/constants";
+
+const ContentWrapper = styled.div`
+  ${MaxWidthWrapper}
+  height: 40px;
+  display: var(--content-display);
+  align-items: center;
+  gap: 24px;
+`;
 
 const Wrapper = styled.div`
   background: var(--gray-900);
   color: var(--white);
   font-weight: 500;
   font-size: 14px;
-`;
+  --content-display: flex;
 
-const ContentWrapper = styled.div`
-  ${MaxWidthWrapper}
-  height: 40px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
+  @media ${MEDIA_QUERIES.tabletAndBelow} {
+    height: 4px;
+    --content-display: none;
+  }
 `;
 
 const MarketingMessage = styled.p`
@@ -38,6 +45,7 @@ function SuperHeader() {
           Free shipping on domestic orders over $75!
         </MarketingMessage>
         <IconInput
+          label="Search"
           placeholder="Search..."
           size="small"
           DisplayIcon={Search}
