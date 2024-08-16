@@ -5,13 +5,29 @@ import styled from "styled-components";
 import { getDisplayedValue } from "./Select.helpers";
 import { ChevronDown } from "react-feather";
 
-type OptionsArray = React.ReactElement<HTMLOptionElement>[];
+function Select({ label, children, value }: Props) {
+  const [currentValue, setCurrentValue] = React.useState(value);
 
-type Props = {
-  label: string;
-  children: OptionsArray;
-  value: string;
-};
+  const displayedValue = getDisplayedValue(currentValue, children);
+  return (
+    <Wrapper>
+      <VisibleLabel>{label}</VisibleLabel>
+      <SelectWrapper>
+        <HiddenSelect
+          title={label}
+          value={currentValue}
+          onChange={(e) => setCurrentValue(e.target.value)}
+        >
+          {children}
+        </HiddenSelect>
+        <Presentational>
+          <SelectedValue>{displayedValue}</SelectedValue>{" "}
+          <StChevronDown size="24px" strokeWidth="2px" />
+        </Presentational>
+      </SelectWrapper>
+    </Wrapper>
+  );
+}
 
 const Wrapper = styled.div`
   display: flex;
@@ -55,28 +71,12 @@ const Presentational = styled.div`
 
 const VisibleLabel = styled.span``;
 
-function Select({ label, children, value }: Props) {
-  const [currentValue, setCurrentValue] = React.useState(value);
+type OptionsArray = React.ReactElement<HTMLOptionElement>[];
 
-  const displayedValue = getDisplayedValue(currentValue, children);
-  return (
-    <Wrapper>
-      <VisibleLabel>{label}</VisibleLabel>
-      <SelectWrapper>
-        <HiddenSelect
-          title={label}
-          value={currentValue}
-          onChange={(e) => setCurrentValue(e.target.value)}
-        >
-          {children}
-        </HiddenSelect>
-        <Presentational>
-          <SelectedValue>{displayedValue}</SelectedValue>{" "}
-          <StChevronDown size="24px" strokeWidth="2px" />
-        </Presentational>
-      </SelectWrapper>
-    </Wrapper>
-  );
-}
+type Props = {
+  label: string;
+  children: OptionsArray;
+  value: string;
+};
 
 export default Select;
