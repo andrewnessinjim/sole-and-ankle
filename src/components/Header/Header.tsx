@@ -9,13 +9,20 @@ import { MEDIA_QUERIES } from "@/constants";
 import { Icon, Menu, Search, ShoppingBag } from "react-feather";
 import UnstyledButton from "../UnstyledButton";
 import VisuallyHidden from "../VisuallyHidden";
+import MobileMenu from "../MobileMenu";
+import SiteNav from "../SiteNav";
 
-function ActionIcon(Icon: Icon, label: string) {
+interface ActionIconProps {
+  Icon: Icon;
+  label: string;
+}
+
+function ActionIcon({ Icon, label }: ActionIconProps) {
   return (
-    <UnstyledButton>
+    <>
       <Icon strokeWidth={2} size={24} style={{ color: "var(--gray-900)" }} />
       <VisuallyHidden>{label}</VisuallyHidden>
-    </UnstyledButton>
+    </>
   );
 }
 
@@ -27,21 +34,22 @@ function Header() {
         <LogoWrapper>
           <Logo />
         </LogoWrapper>
-        <DesktopNav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
-        </DesktopNav>
+        <DesktopNavWrapper>
+          <SiteNav />
+        </DesktopNavWrapper>
 
         <PhoneActions>
-          {ActionIcon(ShoppingBag, "Open cart")}
-          {ActionIcon(Search, "Search")}
-          {ActionIcon(Menu, "Menu")}
+          <ActionIconButton>
+            <ActionIcon Icon={ShoppingBag} label="Open cart" />
+          </ActionIconButton>
+          <ActionIconButton>
+            <ActionIcon Icon={Search} label="Search" />
+          </ActionIconButton>
+          <MobileMenu>
+            <ActionIcon Icon={Menu} label="Menu" />
+          </MobileMenu>
         </PhoneActions>
-        <Filler/>
+        <Filler />
       </MainHeader>
     </Wrapper>
   );
@@ -65,15 +73,18 @@ const Filler = styled.div`
   @media ${MEDIA_QUERIES.tabletAndBelow} {
     display: none;
   }
-`
+`;
 
 const PhoneActions = styled.div`
   gap: clamp(16px, 5vw - 14px, 32px);
   display: var(--actions-display);
 `;
 
-const DesktopNav = styled.nav`
-  gap: 48px;
+const ActionIconButton = styled.div`
+  ${UnstyledButton};
+`;
+
+const DesktopNavWrapper = styled.div`
   margin: 0 48px;
   display: var(--nav-display);
 `;
@@ -86,25 +97,13 @@ const MainHeader = styled.div`
   padding-top: 18px;
   padding-bottom: 18px;
   --actions-display: none;
-  --nav-display: flex;
+  --nav-display: block;
 
   @media ${MEDIA_QUERIES.tabletAndBelow} {
     justify-content: space-between;
     align-items: center;
     --actions-display: flex;
     --nav-display: none;
-  }
-`;
-
-const NavLink = styled.a`
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--gray-900);
-  font-weight: var(--weight-medium);
-
-  &:first-of-type {
-    color: var(--secondary);
   }
 `;
 
