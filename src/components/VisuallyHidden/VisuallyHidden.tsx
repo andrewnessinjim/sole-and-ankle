@@ -1,16 +1,20 @@
 "use client";
 
-import * as React from 'react';
+import * as React from "react";
 import styled from "styled-components";
 
-
-const VisuallyHidden = ({ children, ...delegated }:{children: string}) => {
+const VisuallyHidden = ({
+  children,
+  ...delegated
+}: {
+  children: string | React.JSX.Element;
+}) => {
   const [forceShow, setForceShow] = React.useState(false);
 
   React.useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
-      const handleKeyDown = (ev:KeyboardEvent) => {
-        if (ev.key === 'Alt') {
+    if (process.env.NODE_ENV !== "production") {
+      const handleKeyDown = (ev: KeyboardEvent) => {
+        if (ev.key === "Alt") {
           setForceShow(true);
         }
       };
@@ -19,12 +23,12 @@ const VisuallyHidden = ({ children, ...delegated }:{children: string}) => {
         setForceShow(false);
       };
 
-      window.addEventListener('keydown', handleKeyDown);
-      window.addEventListener('keyup', handleKeyUp);
+      window.addEventListener("keydown", handleKeyDown);
+      window.addEventListener("keyup", handleKeyUp);
 
       return () => {
-        window.removeEventListener('keydown', handleKeyDown);
-        window.removeEventListener('keydown', handleKeyUp);
+        window.removeEventListener("keydown", handleKeyDown);
+        window.removeEventListener("keydown", handleKeyUp);
       };
     }
   }, []);
