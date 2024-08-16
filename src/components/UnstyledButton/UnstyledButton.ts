@@ -1,9 +1,8 @@
 "use client";
 
-import styled from "styled-components";
+import {css} from "styled-components";
 
-export default styled.button<{display?:string}>`
-  display: ${(props) => props.display || 'block'};
+export default css`
   margin: 0;
   padding: 0;
   border: none;
