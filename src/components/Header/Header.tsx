@@ -7,10 +7,15 @@ import MaxWidthWrapper from "../MaxWidthWrapper";
 import Logo from "../Logo";
 import { MEDIA_QUERIES } from "@/constants";
 import { Icon, Menu, Search, ShoppingBag } from "react-feather";
+import UnstyledButton from "../UnstyledButton";
+import VisuallyHidden from "../VisuallyHidden";
 
-function ActionIcon(Icon: Icon) {
+function ActionIcon(Icon: Icon, label: string) {
   return (
-    <Icon strokeWidth={2} size={24} style={{ color: "var(--gray-900)" }} />
+    <UnstyledButton>
+      <Icon strokeWidth={2} size={24} style={{ color: "var(--gray-900)" }} />
+      <VisuallyHidden>{label}</VisuallyHidden>
+    </UnstyledButton>
   );
 }
 
@@ -19,25 +24,24 @@ function Header() {
     <Wrapper>
       <SuperHeader />
       <MainHeader>
-        <Side>
+        <LogoWrapper>
           <Logo />
-        </Side>
-        <Nav>
+        </LogoWrapper>
+        <DesktopNav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
           <NavLink href="/men">Men</NavLink>
           <NavLink href="/women">Women</NavLink>
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
-        </Nav>
+        </DesktopNav>
 
-        <Side>
-          <Actions>
-            {ActionIcon(ShoppingBag)}
-            {ActionIcon(Search)}
-            {ActionIcon(Menu)}
-          </Actions>
-        </Side>
+        <PhoneActions>
+          {ActionIcon(ShoppingBag, "Open cart")}
+          {ActionIcon(Search, "Search")}
+          {ActionIcon(Menu, "Menu")}
+        </PhoneActions>
+        <Filler/>
       </MainHeader>
     </Wrapper>
   );
@@ -47,7 +51,7 @@ const Wrapper = styled.header`
   border-bottom: 1px solid var(--gray-300);
 `;
 
-const Side = styled.div`
+const LogoWrapper = styled.div`
   flex: 1;
 
   @media ${MEDIA_QUERIES.tabletAndBelow} {
@@ -55,12 +59,20 @@ const Side = styled.div`
   }
 `;
 
-const Actions = styled.div`
-  gap: clamp(16px, 5vw - 14px , 32px);
+const Filler = styled.div`
+  flex: 1;
+
+  @media ${MEDIA_QUERIES.tabletAndBelow} {
+    display: none;
+  }
+`
+
+const PhoneActions = styled.div`
+  gap: clamp(16px, 5vw - 14px, 32px);
   display: var(--actions-display);
 `;
 
-const Nav = styled.nav`
+const DesktopNav = styled.nav`
   gap: 48px;
   margin: 0 48px;
   display: var(--nav-display);
