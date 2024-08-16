@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Header/>
-      <Spacer size={64} axis="vertical"/>
+      <Spacer size={64} when={{tabletAndBelow: 48}}/>
       <Main>
         <ShoeIndex/>
       </Main>
