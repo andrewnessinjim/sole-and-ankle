@@ -28,6 +28,7 @@ function MobileMenu({ children }: { children: React.JSX.Element }) {
           <MenuClose>
             <X size={24} />
           </MenuClose>
+          <Filler/>
           <MobileNavWrapper>
             <SiteNav />
           </MobileNavWrapper>
@@ -69,15 +70,22 @@ const MenuContent = styled(Dialog.Content)`
 
 const MenuClose = styled(Dialog.Close)`
   ${UnstyledButton};
-  align-self: flex-end;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  padding: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
+const Filler = styled.div`
+  flex: 1;
+`;
+
 const MobileNavWrapper = styled.div`
   --nav-flex-direction: column;
-  --nav-gap: 22px;
+  --nav-gap: 16px;
   --nav-align-items: flex-start;
 `;
 
@@ -85,6 +93,8 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 14px;
+  flex: 1;
+  justify-content: flex-end;
 `;
 
 const FooterLink = styled.a`
