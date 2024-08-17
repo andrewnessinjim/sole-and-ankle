@@ -49,8 +49,8 @@ const MenuTrigger = styled(Dialog.Trigger)`
 `;
 
 const MenuOverlay = styled(Dialog.Overlay)`
-  background-color: var(--gray-700);
-  opacity: 0.8;
+  background-color: var(--gray-700-transparent);
+  /* opacity: 0.8; */
   position: fixed;
   inset: 0;
 `;

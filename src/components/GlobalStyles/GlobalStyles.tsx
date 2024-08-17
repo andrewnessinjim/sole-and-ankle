@@ -13,14 +13,16 @@ const GlobalStyles = createGlobalStyle`
 
   }
   :root {
-    --white: #ffffff;
-    --primary: #C5295D;
-    --secondary: #6868D9;
-    --gray-900: #313235;
-    --gray-700: #60666C;
-    --gray-500: #949A9C;
-    --gray-300: #C9CECF;
-    --gray-100: #F2F3F3;
+    --gray-700-hsl: 220deg 5% 40%;
+    --white: hsl(0deg 0% 100%);
+    --primary: hsl(340deg 65% 47%);
+    --secondary: hsl(240deg 60% 63%);
+    --gray-900: hsl(220deg 3% 20%);
+    --gray-700: hsl(var(--gray-700-hsl));
+    --gray-700-transparent: hsl(var(--gray-700-hsl) / 0.8);
+    --gray-500: hsl(196deg 4% 60%);
+    --gray-300: hsl(190deg 5% 80%);
+    --gray-100: hsl(185deg 5% 95%);
 
     --weight-normal: 500;
     --weight-medium: 600;
