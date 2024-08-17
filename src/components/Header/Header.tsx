@@ -85,8 +85,14 @@ const ActionIconButton = styled.div`
 `;
 
 const DesktopNavWrapper = styled.div`
-  margin: 0 48px;
+  margin-left: 48px;
+  margin-right: clamp(0px, 23vw - 17rem, 48px);
   display: var(--nav-display);
+  --nav-gap: clamp(
+    24px,
+    14vw - 128px,
+    72px
+  );
 `;
 
 const MainHeader = styled.div`
@@ -96,6 +102,7 @@ const MainHeader = styled.div`
   align-items: baseline;
   padding-top: 18px;
   padding-bottom: 18px;
+  overflow-x: auto;
   --actions-display: none;
   --nav-display: block;
 

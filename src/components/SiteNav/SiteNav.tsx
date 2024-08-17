@@ -6,11 +6,11 @@ import styled from "styled-components";
 function SiteNav() {
   return (
     <Wrapper>
-      <NavLink href="/sale">Sale</NavLink>
-      <NavLink href="/new">New&nbsp;Releases</NavLink>
-      <NavLink href="/men">Men</NavLink>
-      <NavLink href="/women">Women</NavLink>
-      <NavLink href="/kids">Kids</NavLink>
+      <NavLink href="/sale">A&nbsp;VENDRE</NavLink>
+      <NavLink href="/new">Nouvelles&nbsp;Versions</NavLink>
+      <NavLink href="/men">Hommes</NavLink>
+      <NavLink href="/women">Femmes</NavLink>
+      <NavLink href="/kids">LES&nbsp;ENFANTS</NavLink>
       <NavLink href="/collections">Collections</NavLink>
     </Wrapper>
   );
