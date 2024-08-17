@@ -88,16 +88,11 @@ const DesktopNavWrapper = styled.div`
   margin-left: 48px;
   margin-right: clamp(0px, 23vw - 17rem, 48px);
   display: var(--nav-display);
-  --nav-gap: clamp(
-    24px,
-    14vw - 128px,
-    72px
-  );
+  --nav-gap: clamp(1.5rem, 14vw - 8rem, 4.5rem);
 `;
 
 const MainHeader = styled.div`
   ${MaxWidthWrapper};
-  height: 72px;
   display: flex;
   align-items: baseline;
   padding-top: 18px;
